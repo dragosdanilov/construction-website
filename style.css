@@ -1,0 +1,85 @@
+@font-face {
+    font-family: titleFont;
+    src:url(fonts/Adolphus.ttf);
+}
+
+:root {
+    --battleshipGray: rgb(152, 152, 152);
+    --ivory: rgb(255, 255, 241);
+    --beige: rgb(245, 245, 220);
+    --timberwolf: rgb(207, 207, 197);
+    --raisinBlack: rgb(39, 38, 53);
+    --black: rgb(30, 32, 29);
+    --jet: rgb(41, 41, 41);
+    --white: rgb(233, 239, 230);
+    --lemon: rgb(237, 237, 191);
+}
+
+#websiteName {
+    font-family: titleFont;
+}
+
+* {
+    font-family: sans-serif, serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    background-color: var(--battleshipGray);
+    color: var(--jet);
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 140px 10px 140px;
+}
+
+.header-scrolled {
+    background-color: var(--jet);
+    color: var(--white);
+    transition: background 500ms;
+    box-shadow: 0 3px 20px var(--black);
+}
+
+.websiteHome {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#websiteName:hover {
+    color: var(--lemon);
+    cursor: pointer;
+}
+
+#websiteName {
+    color: var(--white);
+    font-size: 40px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.2s;
+}
+
+.links a:hover {
+    color: var(--lemon);
+    text-decoration: underline;
+    opacity: 1;
+    text-underline-offset: 8px;
+}
