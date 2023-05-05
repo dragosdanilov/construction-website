@@ -16,12 +16,16 @@ toggleButton.addEventListener('click', () => {
 })
 
 const track = document.getElementById("image-track");
+const initialPercentage = -41.5;
 
-const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+const handleOnDown = e => {
+    track.dataset.mouseDownAt = e.clientX;
+    track.dataset.prevPercentage = "-41.5";
+};
 
 const handleOnUp = () => {
     track.dataset.mouseDownAt = "0";
-    track.dataset.prevPercentage = track.dataset.percentage;
+    track.dataset.prevPercentage = track.dataset.percentage || '0';
 }
 
 const handleOnMove = e => {
@@ -32,7 +36,7 @@ const handleOnMove = e => {
 
     const percentage = (mouseDelta / maxDelta) * -100,
           nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-          nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+          nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, initialPercentage), -100);
 
     track.dataset.percentage = nextPercentage;
 
